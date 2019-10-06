@@ -13,8 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class SingleTableGrandchild extends SingleTableChild
 {
-    /** @var int|null */
-    private $vitality = null;
+    private ?int $vitality = null;
 
     public function getVitality(): ?int
     {

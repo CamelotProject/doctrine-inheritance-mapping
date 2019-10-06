@@ -9,8 +9,7 @@ use Doctrine\ORM\Events;
 
 class DiscriminatorSubscriber implements EventSubscriber
 {
-    /** @var DiscriminatorMapLoader */
-    private $loader;
+    private DiscriminatorMapLoader $loader;
 
     public function __construct(DiscriminatorMapLoader $loader)
     {

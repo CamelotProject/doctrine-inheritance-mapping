@@ -1,6 +1,8 @@
 Camelot Doctrine Inheritance Mapping
 ====================================
 
+**NOTE:** For legacy PHP support (7.1+) please use the 1.0 branch. 
+
 Installation
 ------------
 

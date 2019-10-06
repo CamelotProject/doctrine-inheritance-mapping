@@ -13,10 +13,8 @@ use Ramsey\Uuid\UuidInterface;
  */
 class SingleTable
 {
-    /** @var UuidInterface|null */
-    protected $id = null;
-    /** @var string|null */
-    protected $title = null;
+    protected ?UuidInterface $id = null;
+    protected ?string $title = null;
 
     public function getId(): ?UuidInterface
     {
