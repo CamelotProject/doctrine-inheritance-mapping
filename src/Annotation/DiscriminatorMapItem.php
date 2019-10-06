@@ -11,8 +11,7 @@ use BadMethodCallException;
  */
 final class DiscriminatorMapItem
 {
-    /** @var string|null */
-    private $value;
+    private ?string $value;
 
     public function __construct(array $data)
     {

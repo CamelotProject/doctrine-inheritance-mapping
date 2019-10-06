@@ -13,8 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class SingleTableChild extends SingleTable
 {
-    /** @var int|null */
-    private $awesomeness = null;
+    private ?int $awesomeness = null;
 
     public function getAwesomeness(): ?int
     {

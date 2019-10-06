@@ -18,12 +18,9 @@ use RuntimeException;
  */
 final class DiscriminatorMapLoader
 {
-    /** @var Reader */
-    private $reader;
-    /** @var MappingDriver */
-    private $mappingDriver;
-    /** @var array */
-    private $cachedMap;
+    private Reader $reader;
+    private MappingDriver $mappingDriver;
+    private array $cachedMap;
 
     public function __construct(Reader $reader, Configuration $config)
     {
