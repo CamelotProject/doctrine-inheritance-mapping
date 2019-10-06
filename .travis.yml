@@ -1,0 +1,35 @@
+language: php
+
+matrix:
+    include:
+        - php: 7.4snapshot
+        - php: 7.4snapshot
+          env: COMPOSER_FLAGS="--prefer-lowest"
+        - php: 7.4snapshot
+          env: PHPUNIT_FLAGS="--coverage-text --coverage-html coverage/"
+        - php: nightly
+    fast_finish: true
+    allow_failures:
+        - php: nightly
+
+before_script:
+    - |
+        if [[ "$COVERAGE" = true ]] ; then
+          echo > $HOME/.phpenv/versions/$TRAVIS_PHP_VERSION/etc/conf.d/xdebug.ini
+          git clone --single-branch --branch=v1.0.6 --depth=1 https://github.com/krakjoe/pcov
+          cd pcov
+          phpize
+          ./configure
+          make clean install
+          echo "extension=pcov.so" > $HOME/.phpenv/versions/$TRAVIS_PHP_VERSION/etc/conf.d/pcov.ini
+          cd $TRAVIS_BUILD_DIR
+        fi
+    - travis_retry composer self-update
+    - travis_retry composer update --no-interaction --prefer-dist $COMPOSER_FLAGS
+
+script:
+    - vendor/bin/phpunit $PHPUNIT_FLAGS
+
+cache:
+    directories:
+        - $COMPOSER_CACHE_DIR

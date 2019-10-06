@@ -1,0 +1,12 @@
+/.env.local
+/.env.local.php
+/.env.*.local
+/var/
+/vendor/
+.phpunit
+.phpunit.result.cache
+phpunit.xml
+.php_cs
+.php_cs.cache
+composer.lock
+symfony.lock
