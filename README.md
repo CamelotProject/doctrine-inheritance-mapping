@@ -83,7 +83,10 @@ parent for each subclass.
 ###### Parent Class
 
 ```php
-use Camelot\DoctrineInheritanceMapping\Annotation\DiscriminatorEntry;
+<?php
+namespace App\Entity;
+
+use Camelot\DoctrineInheritanceMapping\Annotation\DiscriminatorMapItem;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -104,7 +107,10 @@ optional, and has been omitted above for clarity.
 ###### Child(ren) Class
 
 ```php
-use Camelot\DoctrineInheritanceMapping\Annotation\DiscriminatorEntry;
+<?php
+namespace App\Entity;
+
+use Camelot\DoctrineInheritanceMapping\Annotation\DiscriminatorMapItem;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
